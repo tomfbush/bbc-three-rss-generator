@@ -31,7 +31,7 @@ three_page = 'http://www.bbc.co.uk/bbcthree'
 # BeautifulSoup setup #
 #######################
 
-# query the website and return the html to the variable ‘page’
+# query the website and return the html to the variable page
 request = requests.get(three_page)
 # print(request.encoding)
 page = request.text
@@ -91,4 +91,4 @@ if makeRSS:
         items=RSSItemList
     )
 
-    rss.write_xml(open("bbc-three-rss.xml", "w", encoding="utf-16"))  # encoding very important, breaks otherwise!
+rss.write_xml(open("/var/www/html/bbc-three-rss.xml", "w", encoding="utf-8"))  # encoding very important, breaks otherwise!
